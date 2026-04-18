@@ -16,7 +16,7 @@ async function upload() {
         status.innerText = "Uploading...";
         img.style.display = "none";
 
-        let res = await fetch("http://localhost:8000/predict", {
+        let res = await fetch("https://snow-detection-app.onrender.com/predict", {
             method: "POST",
             body: formData
         });
@@ -32,10 +32,10 @@ async function upload() {
         img.src = url;
         img.style.display = "block";
 
-        status.innerText = "Done ✔";
+        status.innerText = "Done";
 
     } catch (error) {
         console.error(error);
-        status.innerText = "Error ❌";
+        status.innerText = "Error!";
     }
 }
